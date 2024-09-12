@@ -840,8 +840,44 @@
             }
 
             // Refresh data after approval
-            // fetchData();
+            fetchData();
+
+            // Check if the order array exists and is an array
+            if (Array.isArray(orderData.order)) {
+                // Calculate the total amount of items
+                let totalCalculatedAmount = 0;
+                const itemsDetails = orderData.order.map(item => {
+                    const itemTotal = item.itemPrice * item.quantity;
+                    totalCalculatedAmount += itemTotal;
+                    return `${item.itemName}\nPrice: ₹${item.itemPrice}\nQuantity: ${item.quantity}\nTotal: ₹${itemTotal}\n\n`;
+                }).join('');
+
+                const difference = totalAmount - totalCalculatedAmount;
+
+                // Create a detailed bill message
+                const billMessage = `
+*Order Bill Details*
+*Order ID:* ${orderId}
+
+*Items:* 
+${itemsDetails}*Sub-Total:* ₹${totalCalculatedAmount}
+*Coupon Applied:* ₹${orderData.couponApplied}: ${difference}
+*Total Amount:* ₹${totalAmount}
+
+*Thank you, Visit again!*
+`;
+
+                // Encode the message for WhatsApp
+                const encodedMessage = encodeURIComponent(billMessage.trim());
+                const whatsappUrl = `https://wa.me/${orderData.userMobileNumber}?text=${encodedMessage}`;
+
+                // Open the WhatsApp chat in a new window
+                window.open(whatsappUrl, '_blank');
+            } else {
+                console.log("Order items are not available or not an array.");
+            }
         }
+
 
         async function updateReferralWallet(referralNumber, referralAmount, level) {
             // Reference to the referral user's document
@@ -880,6 +916,9 @@
                 console.log(`Referral number ${referralNumber} does not exist.`);
             }
         }
+
+
+
 
 
 
