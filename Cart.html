@@ -398,25 +398,26 @@
                 
 </div>
         `;
-                // const couponInput = document.getElementById('couponInput');
-                if (document.getElementById('couponInput').innerHTML.includes('<option>FLAT100OFF</option>') || document.getElementById('couponInput').innerHTML.includes('<option>WALLETOFF50%</option>')) {
 
-                    cartItemsContainer.appendChild(itemElement);
-                    console.log('include');
-                } else {
-                    if (item.category === 'Cake' || item.category === 'Pizza') {
-                        document.getElementById('couponInput').innerHTML += `<option>FLAT100OFF</option>`
-                        document.getElementById('couponInput').innerHTML += `<option>WALLETOFF50%</option>`
-
-                        console.log('not include, exists');
+                if (item.category === 'Cake' || item.category === 'Pizza') {
+                    if (document.getElementById('couponInput').innerHTML.includes('<option>FLAT100OFF</option>') || document.getElementById('couponInput').innerHTML.includes('<option>WALLETOFF50%</option>')) {
+                        cartItemsContainer.appendChild(itemElement);
                     } else {
-                        document.getElementById('couponInput').innerHTML += `<option>WALLETOFF50%</option>`
+                        document.getElementById('couponInput').innerHTML += '<option>FLAT100OFF</option>'
+                        document.getElementById('couponInput').innerHTML += '<option>WALLETOFF50%</option>'
+                        cartItemsContainer.appendChild(itemElement);
                     }
 
-                    console.log('not include');
+                } else {
+                    if (document.getElementById('couponInput').innerHTML.includes('<option>WALLETOFF50%</option>')) {
+                    } else {
+                        document.getElementById('couponInput').innerHTML += '<option>WALLETOFF50%</option>'
+
+                    }
                     cartItemsContainer.appendChild(itemElement);
+
                 }
-                // cartItemsContainer.appendChild(itemElement);
+
             });
 
             // Display total amount
