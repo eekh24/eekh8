@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-image: url(cakeBackground.jpg);
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Styles for form container */
+    .container {
+      width: 100%;
+      max-width: 400px;
+      /* Set maximum width of the form container */
+      margin: auto;
+      padding: 20px;
+    }
+
+    /* Styles for form inputs */
+    input[type=date],
+    input[type=number],
+    input[type=text],
+    input[type=password] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    /* Styles for submit button */
+    input[type=submit],
+    button {
+      width: 100%;
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    input[type=submit]:hover,
+    button:hover {
+      background-color: #45a049;
+    }
+
+    /* Styles for message div */
+    #message {
+      margin-top: 20px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    /* Media query for smaller screens */
+    @media screen and (max-width: 600px) {
+      .container {
+        padding: 10px;
+      }
+    }
+
+    /* Styles for modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .modals {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      color: green;
+      width: 80%;
+      max-width: 600px;
+      text-align: center;
+    }
+
+    .modal-contents {
+      background-color: #fefefe;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      color: red;
+      width: 80%;
+      max-width: 600px;
+      text-align: center;
+    }
+
+    .modal-contentss {
+      background-color: #fefefe;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      color: red;
+      width: 80%;
+      max-width: 600px;
+      text-align: center;
+    }
+
+    .modal-contentsss {
+      background-color: #fefefe;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      color: red;
+      width: 80%;
+      max-width: 600px;
+      text-align: center;
+    }
+
+    .modal-contentssss {
+      background-color: #fefefe;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      color: red;
+      width: 80%;
+      max-width: 600px;
+      text-align: center;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .closes {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .closess {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .closesss {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .closessss {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    big {
+      color: green;
+    }
+
+    #topBar {
+      height: 60px;
+      width: 1
+    }
+
+    #topBar h4 {
+      color: green;
+      text-align: center;
+      margin-top: 30px;
+      margin-bottom: 10px;
+      font-size: 50px;
+    }
+
+
+
+    #a {
+
+      width: 100%;
+      height: 180px;
+
+    }
+  </style>
+</head>
+
+<body>
+  <div id="topBar">
+    <h4>eekh</h4>
+  </div>
+
+
+
+  <div class="container">
+    <h3>Sign Up</h3>
+    <form id="signup-form">
+      <input type="number" id="signup-mobile" name="mobile" required placeholder="Enter Your Mobile Number"
+        maxlength="10" />
+      <input type="text" id="signup-name" name="name" required placeholder="Enter Your Name" />
+      <input type="password" id="signup-password" name="password" required placeholder="Enter Your Password" />
+      <input type="number" id="referralPhoneNumber" name="referral" placeholder="Referral Mobile Number" />
+      <button type="submit">Sign Up</button>
+    </form>
+    <div id="signup-message"></div>
+    <p><u><b>Our Servings</b></u></p>
+
+    <hr>
+    <pre><b>1.  <a href ="cake.html">Cake</a></b></pre>
+    <pre><b>2.  <a href ="pizza.html">Pizza</a></b></pre>
+    <pre><b>3.  <a href ="index.html">Ice Cream</a></b></pre>
+    <pre><b>4.  <a href ="index.html">Cold Coffee</a></b></pre>
+  </div>
+
+  <h3>
+    <pre>  Cake</pre>
+  </h3>
+  <hr>
+  <img src="cake1.jpeg" alt="image" style="width:49%; margin-top:5px;"> <img src="cake2.jpeg" alt="image"
+    style="width:49%; margin-top:5px;">
+  <img src="cake3.jpeg" alt="image" style="width:49%; margin-top:2px;"> <img src="cake4.jpeg" alt="image"
+    style="width:49%; margin-top:2px;">
+  <img src="cake10.jpg" alt="image" style="width:49%; margin-top:2px;"> <img src="cake9.jpg" alt="image"
+    style="width:49%; margin-top:2px;">
+  <img src="cake6.jpg" alt="image" style="width:49%; margin-top:2px;"> <img src="cake7.jpg" alt="image"
+    style="width:49%; margin-top:2px;">
+  <img src="cake12.jpg" alt="image" style="width:49%; margin-top:2px;"> <img src="cake14.jpg" alt="image"
+    style="width:49%; margin-top:2px;">
+  <hr>
+  <h3>
+    <pre>  Layer Cake</pre>
+  </h3>
+  <hr>
+  <img src="cake32.jpg" alt="image" style="width:49%; margin-top:2px;"> <img src="cake36.jpg" alt="image"
+    style="width:49%; margin-top:2px;">
+  <img src="cake33.jpg" alt="image" style="width:49%; margin-top:2px;"> <img src="cake5.jpeg" alt="image"
+    style="width:49%; margin-top:2px;">
+  <img src="cake30.jpg" alt="image" style="width:49%; margin-top:2px;"> <img src="cake35.jpg" alt="image"
+    style="width:49%; margin-top:2px;">
+  <img src="cake34.jpg" alt="image" style="width:49%; margin-top:2px;"> <img src="cake37.jpg" alt="image"
+    style="width:49%; margin-top:2px;">
+  <img src="cake38.jpg" alt="image" style="width:49%; margin-top:2px;">
+  <hr>
+  <h3>
+    <pre>  Anniversary Cake</pre>
+  </h3>
+  <hr>
+  <img src="cake16.jpg" alt="image" style="width:49%; margin-top:2px;"> <img src="cake11.jpg" alt="image"
+    style="width:49%; margin-top:2px;">
+  <img src="cake15.jpg" alt="image" style="width:49%; margin-top:2px;">
+  <hr>
+  <h3>
+    <pre>  Girls Cake</pre>
+  </h3>
+  <hr>
+  <img src="cake31.jpg" alt="image" style="width:49%; margin-top:2px;"> <img src="cake42.jpg" alt="image"
+    style="width:49%; margin-top:2px;">
+  <img src="cake18.jpg" alt="image" style="width:49%; margin-top:2px;"> <img src="cake19.jpg" alt="image"
+    style="width:49%; margin-top:2px;">
+  <hr>
+  <h3>
+    <pre>  Boys Cake</pre>
+  </h3>
+  <hr>
+  <img src="cake39.jpg" alt="image" style="width:49%; margin-top:2px;"> <img src="cake29.jpg" alt="image"
+    style="width:49%; margin-top:2px;">
+  <img src="cake8.jpg" alt="image" style="width:49%; margin-top:2px;"> <img src="cake24.jpg" alt="image"
+    style="width:49%; margin-top:2px;">
+  <img src="cake41.jpg" alt="image" style="width:49%; margin-top:2px;"> <img src="cake40.jpg" alt="image"
+    style="width:49%; margin-top:2px;">
+  <img src="cake28.jpg" alt="image" style="width:49%; margin-top:2px;">
+  <hr>
+  <h3>
+    <pre>  Photo Cake</pre>
+  </h3>
+  <hr>
+  <img src="cake20.jpg" alt="image" style="width:49%; margin-top:2px;"> <img src="cake22.jpg" alt="image"
+    style="width:49%; margin-top:2px;">
+  <img src="cake21.jpg" alt="image" style="width:49%; margin-top:2px;"> <img src="cake23.jpg" alt="image"
+    style="width:49%; margin-top:2px;">
+
+
+
+  <script type="module">
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js';
+    import { getFirestore, doc, getDoc, setDoc, updateDoc, arrayUnion, setDoc as firestoreSetDoc } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js';
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDjpg5dNL6R44dPpoDQabNaT8tLVmVWTQQ",
+      authDomain: "eekh-website.firebaseapp.com",
+      projectId: "eekh-website",
+      storageBucket: "eekh-website.appspot.com",
+      messagingSenderId: "276234231567",
+      appId: "1:276234231567:web:1509267f60d97a83cea87a",
+      measurementId: "G-QX5HCKXMDK"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    const signupForm = document.getElementById('signup-form');
+    const signupMessageDiv = document.getElementById('signup-message');
+
+    function a() {
+      // Get query parameters from the URL
+      const queryParams = new URLSearchParams(window.location.search);
+
+      // Extract the referral number from the URL parameters
+      const referralNumber = queryParams.get('referralNumber');
+      console.log("Referral number retrieved:", referralNumber);
+
+      // If the referral number exists, set it in the input field
+      if (referralNumber) {
+        document.getElementById('referralPhoneNumber').value = referralNumber;
+      }
+    }
+
+    // Run the function `a` when the window finishes loading
+    window.onload = a;
+
+
+    signupForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const mobile = document.getElementById('signup-mobile').value;
+      const password = document.getElementById('signup-password').value;
+      const name = document.getElementById('signup-name').value;
+      const referralPhoneNumber = document.getElementById('referralPhoneNumber').value;
+
+      try {
+        // Check if the user already exists
+        const userDoc = await getDoc(doc(db, 'users', mobile));
+        if (userDoc.exists()) {
+          const userData = userDoc.data();
+          if (userData.mobile === mobile) {
+            // Redirect to login.html if the user is already registered and the password matches
+            window.location.href = `index.html?mobile=${encodeURIComponent(mobile)}`;
+          } else {
+            alert('Already Registered!! Please Login');
+            window.location.href = `index.html?mobile=${encodeURIComponent(mobile)}`;
+          }
+        } else {
+          // Check if referralPhoneNumber exists
+          if (referralPhoneNumber) {
+            const referralDocRef = doc(db, 'users', referralPhoneNumber);
+            const referralDoc = await getDoc(referralDocRef);
+
+            if (!referralDoc.exists()) {
+              alert('Referral number is incorrect.');
+              return;
+            }
+          }
+
+          // If the user does not exist, register them
+          await setDoc(doc(db, 'users', mobile), { name, password, referralPhoneNumber });
+
+          // Update the myReferred collection with the new mobile number and name
+          if (referralPhoneNumber) {
+            const referredDocRef = doc(db, 'myReferred', referralPhoneNumber);
+
+            // Create or update the document with mobile number and name
+            await firestoreSetDoc(referredDocRef, {
+              referredNumbers: arrayUnion({ mobile, name })
+            }, { merge: true });
+          }
+          // Please click SEND button to Register successfully
+          var phoneNumber = "9664478500"; // The recipient's phone number
+          var message = "Hi eekh!\n" + "I am: " + name + "\nMobile number: " + mobile + "\nReferral number: " + referralPhoneNumber + "\n(Please click SEND button to Register successfully)"; // The message you want to send
+          var url = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message);
+
+          // Open the WhatsApp link in a new tab
+          window.open(url, '_blank').focus();
+
+          alert('User registered successfully. You can now log in.');
+          window.location.href = `login.html?mobile=${encodeURIComponent(mobile)}`;
+        }
+      } catch (error) {
+        console.error('Error signing up:', error);
+        alert('Error signing up. Please try again.');
+      }
+    });
+
+
+  </script>
+
+
+
+
+
+
+</body>
+
+</html>
