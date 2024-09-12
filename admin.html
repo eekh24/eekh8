@@ -869,7 +869,7 @@ ${itemsDetails}*Sub-Total:* ₹${totalCalculatedAmount}
 
                 // Encode the message for WhatsApp
                 const encodedMessage = encodeURIComponent(billMessage.trim());
-                const whatsappUrl = `https://wa.me/${orderData.userMobileNumber}?text=${encodedMessage}&source=business`;
+                const whatsappUrl = `https://wa.me/${orderData.userMobileNumber}?text=${encodedMessage}`;
 
                 // Open the WhatsApp chat in a new window
                 window.open(whatsappUrl, '_blank');
