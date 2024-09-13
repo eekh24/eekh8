@@ -21,7 +21,10 @@
       max-width: 400px;
       /* Set maximum width of the form container */
       margin: auto;
-      padding: 20px;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-bottom: 20px;
+
     }
 
     /* Styles for form inputs */
@@ -31,10 +34,13 @@
     input[type=password] {
       width: 100%;
       padding: 12px 20px;
-      margin: 8px 0;
+      margin: 2px 0;
       border: 1px solid #ccc;
       border-radius: 4px;
       box-sizing: border-box;
+      border-width: 2px;
+      border-color: black;
+      font-size: 16px;
     }
 
     /* Styles for submit button */
@@ -48,6 +54,7 @@
       border: none;
       border-radius: 4px;
       cursor: pointer;
+      font-size: 16px;
     }
 
     input[type=submit]:hover,
@@ -65,7 +72,9 @@
     /* Media query for smaller screens */
     @media screen and (max-width: 600px) {
       .container {
-        padding: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
       }
     }
 
@@ -197,7 +206,7 @@
     }
 
     #topBar {
-      height: 60px;
+      height: 50px;
       width: 1
     }
 
@@ -221,16 +230,196 @@
     #whatsappIcon {
       position: fixed;
       right: 10px;
-      bottom: 100px;
-      background-color: white;
+      bottom: 25px;
+      background-color: black;
       z-index: 1000;
       visibility: visible;
-      height: 40px;
-      width: 40px;
+      height: 45px;
+      width: 45px;
       border-radius: 7px;
       display: flex;
       justify-content: center;
       align-items: center;
+      border-width: 4px;
+      border-style: bold;
+      border-color: green;
+    }
+
+    @keyframes a {
+      0% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes b {
+      0% {
+        border-width: 5;
+      }
+
+      50% {
+        border-width: 0;
+      }
+
+      100% {
+        border-width: 5;
+      }
+    }
+
+    #aDiv {
+      padding-top: 20px;
+      text-align: center;
+
+    }
+
+    #aDiv big {
+
+      text-align: center;
+
+
+    }
+
+    #off {
+      text-align: center;
+      animation: a 0.70s infinite;
+      padding-top: 25px;
+    }
+
+    #off big {
+
+      text-align: center;
+      font-size: 25px;
+    }
+
+    .slider_container {
+      position: relative;
+      width: 100%;
+      height: 180px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      overflow: hidden;
+      /* margin-top: 1px; */
+      margin-top: 10px;
+      margin-left: 0px;
+      margin-right: 0px;
+      margin-bottom: 0px;
+    }
+
+    .slider {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      animation: 30s cubic-bezier(1, 0.95, 0.565, 1) sliding infinite;
+    }
+
+    .slide {
+      position: relative;
+      min-width: 100%;
+      height: 100%;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .slide.one {
+      background: linear-gradient(180deg, white, lightgreen, darkgreen)
+    }
+
+    .slide.two {
+      /* background: rgb(255, 64, 64); */
+    }
+
+    .slide.three {
+      /* background: rgb(11, 173, 188);
+ */
+    }
+
+    .slide.four {
+      /* background: rgb(11, 188, 14); */
+    }
+
+    .slide.five {
+      /* background: rgb(173, 11, 188); */
+    }
+
+    @keyframes sliding {
+      0% {
+        transform: translateX(0%);
+      }
+
+      20% {
+        transform: translateX(0%);
+      }
+
+      25% {
+        transform: translateX(-100%);
+      }
+
+      45% {
+        transform: translateX(-100%);
+      }
+
+      50% {
+        transform: translateX(-200%);
+      }
+
+      70% {
+        transform: translateX(-200%);
+      }
+
+      75% {
+        transform: translateX(-300%);
+      }
+
+      95% {
+        transform: translateX(-300%);
+      }
+
+      100% {
+        transform: translateX(-400%);
+      }
+    }
+
+    .sliderImage1 {
+      padding-left: 20px;
+    }
+
+    .sliderImage2 {
+      padding-right: 20px;
+    }
+
+    .sliderImageAll {
+      padding-top: 30px;
+      justify-content: space-between;
+      display: flex;
+    }
+
+    @keyframes a {
+      0% {
+        display: none;
+      }
+
+      50% {
+        display: none;
+      }
+
+      100% {
+        display: block;
+      }
     }
   </style>
 </head>
@@ -247,14 +436,92 @@
       window.open("https://wa.me/9664478500")
     }
   </script>
-  <div id="topBar">
-    <h4>eekh</h4>
+  <div style="margin: 0px;" id="topBar">
+    <h4 style="margin: 0px;">eekh</h4>
   </div>
 
-
-
   <div class="container">
-    <h3>Sign Up</h3>
+    <section class="slider_container">
+      <section class="slider">
+        <div class="slide first" style="border-width: 2px; border-style: solid; border-color: red;">
+          <img style="animation: a 2s infinite;" src="sliderImage6.png" alt="" />
+          <span style="animation: a 2s infinite;" class="caption"> slide first </span>
+
+
+          <div class="slide one">
+
+            <div class="sliderImageAll">
+
+
+
+
+              <div class="sliderImage1">
+                <img class="myImage1" src="cake1.jpeg" alt="image"
+                  style="width:80px;  height: 80px; border-style: solid; border-width: 5; animation: b 1s infinite;">
+              </div>
+              <div id="off">
+                <big><big><u><span>*Rs.100 off*</span></u></big></big>
+              </div>
+              <div class="sliderImage2">
+                <img class="myImage2" src="cake1.jpeg" alt="image"
+                  style="width:80px;  height: 80px; border-style: solid; border-width: 5; animation: b 1s infinite;">
+              </div>
+
+            </div>
+            <div id="aDiv">
+              <big style="color: #fefefe;">Please Fill the Below Feilds You will get</big>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="slide two">
+          <img src="coffeeSlider.png" alt="" />
+          <span class="caption"> slide two </span>
+        </div>
+        <div class="slide three">
+          <img src="sliderImage3.jpeg" alt="" />
+          <span class="caption"> slide three </span>
+        </div>
+        <div class="slide four">
+          <img src="sliderImage4.jpeg" alt="" />
+          <span class="caption"> slide four </span>
+        </div>
+        <div class="slide five">
+          <img src="sliderImage5.jpeg" alt="" />
+          <span class="caption"> slide five </span>
+        </div>
+
+
+      </section>
+    </section>
+
+
+
+
+
+
+    <script>
+      const images1 = ['cake1.jpeg', 'cake2.jpeg', 'cake3.jpeg', 'cake4.jpeg', 'cake5.jpeg']
+      const images2 = ['cake2.jpeg', 'cake3.jpeg', 'cake4.jpeg', 'cake5.jpeg', 'cake1.jpeg']
+      let currentIndex1 = 0;
+      let currentIndex2 = 0;
+
+      function changeImage() {
+        const imgs1 = document.querySelectorAll('.myImage1');
+        const imgs2 = document.querySelectorAll('.myImage2');
+        currentIndex1 = (currentIndex1 + 1) % images1.length;
+        currentIndex2 = (currentIndex2 + 1) % images2.length;
+        imgs1.forEach(img => img.src = images1[currentIndex1]);
+        imgs2.forEach(img => img.src = images2[currentIndex2]);
+
+      }
+
+      setInterval(changeImage, 1000)
+    </script>
+
+    <h3 style="margin-top: 10px; margin-left: 0px; margin-right: 0px; margin-bottom: 0px; ">Sign Up</h3>
     <form id="signup-form">
       <input type="number" id="signup-mobile" name="mobile" required placeholder="Your Mobile Number" maxlength="10" />
       <input type="text" id="signup-name" name="name" required placeholder="Your Name" />
@@ -285,8 +552,8 @@
     <pre><b>4.  <a href ="index.html">Cold Coffee</a></b></pre>
   </div>
 
-  <h3>
-    <pre>  Cake</pre>
+  <h3 style="margin: 0px;">
+    <pre style="margin: 0px;">  Cake</pre>
   </h3>
   <hr>
   <img src="cake1.jpeg" alt="image" style="width:49%; margin-top:5px;"> <img src="cake2.jpeg" alt="image"
