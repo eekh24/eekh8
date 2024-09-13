@@ -217,10 +217,36 @@
       height: 180px;
 
     }
+
+    #whatsappIcon {
+      position: fixed;
+      right: 10px;
+      bottom: 100px;
+      background-color: white;
+      z-index: 1000;
+      visibility: visible;
+      height: 40px;
+      width: 40px;
+      border-radius: 7px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   </style>
 </head>
 
 <body>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <div id="whatsappIcon" onclick="openWhatsapp()">
+    <i class="fa-brands fa-whatsapp fa-beat fa-2xl" style="color: #00ff40;"></i>
+  </div>
+  <script>
+    function openWhatsapp() {
+      window.open("https://wa.me/9664478500")
+    }
+  </script>
   <div id="topBar">
     <h4>eekh</h4>
   </div>
