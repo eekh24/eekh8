@@ -256,12 +256,24 @@
   <div class="container">
     <h3>Sign Up</h3>
     <form id="signup-form">
-      <input type="number" id="signup-mobile" name="mobile" required placeholder="Enter Your Mobile Number"
-        maxlength="10" />
-      <input type="text" id="signup-name" name="name" required placeholder="Enter Your Name" />
-      <input type="password" id="signup-password" name="password" required placeholder="Enter Your Password" />
-      <input type="number" id="referralPhoneNumber" name="referral" placeholder="Referral Mobile Number" />
+      <input type="number" id="signup-mobile" name="mobile" required placeholder="Your Mobile Number" maxlength="10" />
+      <input type="text" id="signup-name" name="name" required placeholder="Your Name" />
+      <input type="password" id="signup-password" name="password" required placeholder="Your Password" />
+      <input type="text" id="address" name="address" placeholder="Your Address (Optional)" />
+      <input type="number" id="referralPhoneNumber" name="referral" placeholder="Referral Mobile Number (Optional)" />
+
       <button type="submit">Sign Up</button>
+      <div
+        style="height: 30px; width: 60px; float: right; background-color: #4CAF50; border-radius: 7px; text-align: center; display: flex; justify-content: center; align-items: center; color: white; cursor: pointer;"
+        onclick="goToLogin()">
+        Login
+      </div>
+      <script>
+        function goToLogin() {
+          window.location.href = 'index.html';
+        }
+      </script>
+
     </form>
     <div id="signup-message"></div>
     <p><u><b>Our Servings</b></u></p>
@@ -386,6 +398,7 @@
       const password = document.getElementById('signup-password').value;
       const name = document.getElementById('signup-name').value;
       const referralPhoneNumber = document.getElementById('referralPhoneNumber').value;
+      const address = document.getElementById('address').value;
 
       try {
         // Check if the user already exists
@@ -412,7 +425,7 @@
           }
 
           // If the user does not exist, register them
-          await setDoc(doc(db, 'users', mobile), { name, password, referralPhoneNumber });
+          await setDoc(doc(db, 'users', mobile), { name, password, referralPhoneNumber, address });
 
           // Update the myReferred collection with the new mobile number and name
           if (referralPhoneNumber) {
@@ -425,7 +438,26 @@
           }
           // Please click SEND button to Register successfully
           var phoneNumber = "9664478500"; // The recipient's phone number
-          var message = "Hi eekh!\n" + "I am: " + name + "\nMobile number: " + mobile + "\nReferral number: " + referralPhoneNumber + "\nI have registered successfully!"; // The message you want to send
+
+          if (referralPhoneNumber === '') {
+            var message = "Hi eekh!\n" + "I am: " + name + "\nMobile number: " + mobile + "\nReferral number: null" + "\naddress: " + address + "\nI have registered successfully!"; // The message you want to send
+
+          } else {
+            var message = "Hi eekh!\n" + "I am: " + name + "\nMobile number: " + mobile + "\nReferral number: " + referralPhoneNumber + "\naddress: " + address + "\nI have registered successfully!"; // The message you want to send
+          }
+          if (address === '') {
+            var message = "Hi eekh!\n" + "I am: " + name + "\nMobile number: " + mobile + "\nReferral number: " + referralPhoneNumber + "\naddress: null" + "\nI have registered successfully!"; // The message you want to send
+
+          } else {
+            var message = "Hi eekh!\n" + "I am: " + name + "\nMobile number: " + mobile + "\nReferral number: " + referralPhoneNumber + "\naddress: " + address + "\nI have registered successfully!"; // The message you want to send
+          }
+          if (referralPhoneNumber === '' && address === '') {
+            var message = "Hi eekh!\n" + "I am: " + name + "\nMobile number: " + mobile + "\nReferral number: null" + "\naddress: null" + "\nI have registered successfully!"; // The message you want to send
+
+          } else {
+            var message = "Hi eekh!\n" + "I am: " + name + "\nMobile number: " + mobile + "\nReferral number: " + referralPhoneNumber + "\naddress: " + address + "\nI have registered successfully!"; // The message you want to send
+          }
+          // var message = "Hi eekh!\n" + "I am: " + name + "\nMobile number: " + mobile + "\nReferral number: " + referralPhoneNumber + "\naddress: " + address + "\nI have registered successfully!"; // The message you want to send
           var url = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message);
 
           // Open the WhatsApp link in a new tab
