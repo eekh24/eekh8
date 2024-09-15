@@ -282,11 +282,13 @@
                                 element.style.color = "green";
                                 if (transactionTypes2[index]) {
                                     transactionTypes2[index].textContent = 'Added Balance';
+
                                 }
                             } else if (element.textContent === "Deduction") {
                                 element.style.color = "red";
                                 if (transactionTypes2[index]) {
                                     transactionTypes2[index].textContent = 'Deducted Balance';
+                                    transactionTypes2[index].style.color = 'red';
                                 }
                             }
                         });
