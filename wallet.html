@@ -258,10 +258,11 @@
                         transactions.forEach(transaction => {
                             const readableDate = transaction.date.toDate().toLocaleString(); // Convert timestamp to readable date
                             const formattedAmount = parseFloat(transaction.amount).toFixed(2); // Format amount to 2 decimal places
+                            let a = '';
                             historyHTML += `
                         <div class="transaction">
                             <p><strong class="transactionType">${transaction.type}</strong></p>
-                            <p><strong style="color: green">Previous Balance:</strong> ₹${formattedAmount || "0.00"}</p>
+                            <p><strong style="color: green">${a} Balance:</strong> ₹${formattedAmount || "0.00"}</p>
                             <p><strong>Date:</strong> ${readableDate}</p>
                             <p><strong>Reason:</strong> ${transaction.reason}</p>
                             <p><strong style="color: green">Previous Balance:</strong> ₹${transaction.previousBalance || "0"}</p>
@@ -275,8 +276,10 @@
                         transactionTypes.forEach(element => {
                             if (element.textContent === "Addition") {
                                 element.style.color = "green";
+                                a = 'Added'
                             } else if (element.textContent === "Deduction") {
                                 element.style.color = "red";
+                                a = 'deducted';
                             }
                         });
                     } else {
