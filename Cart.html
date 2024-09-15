@@ -629,6 +629,7 @@
 
                             // Deduct the totalAmount from referralAmount
                             const updatedReferralAmount = currentReferralAmount - totalAmount;
+                            console.log(updatedReferralAmount);
 
                             // Prepare the wallet transaction details
                             const walletHistory = userData.walletHistory || [];
@@ -637,7 +638,7 @@
                                 amount: totalAmount,
                                 date: new Date(),
                                 reason: 'Order placed',
-                                previousBalance: currentReferralAmount
+                                previousBalance: currentReferralAmount + totalAmount
                             });
 
                             // Update the referralAmount and walletHistory in Firestore
