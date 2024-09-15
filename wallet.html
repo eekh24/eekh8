@@ -255,36 +255,45 @@
                     // Display the transaction history
                     if (transactions.length > 0) {
                         let historyHTML = '<h3>Transaction History</h3>';
+
                         transactions.forEach(transaction => {
                             const readableDate = transaction.date.toDate().toLocaleString(); // Convert timestamp to readable date
                             const formattedAmount = parseFloat(transaction.amount).toFixed(2); // Format amount to 2 decimal places
-                            let a = '';
+
                             historyHTML += `
-                        <div class="transaction">
-                            <p><strong class="transactionType">${transaction.type}</strong></p>
-                            <p><strong style="color: green">${a} Balance:</strong> ₹${formattedAmount || "0.00"}</p>
-                            <p><strong>Date:</strong> ${readableDate}</p>
-                            <p><strong>Reason:</strong> ${transaction.reason}</p>
-                            <p><strong style="color: green">Previous Balance:</strong> ₹${transaction.previousBalance || "0"}</p>
-                        </div>
-                    `;
+        <div class="transaction">
+            <p><strong class="transactionType">${transaction.type}</strong></p>
+            <p><strong style="color: green" class='transactionType2'></strong> ₹${formattedAmount || "0.00"}</p>
+            <p><strong>Date:</strong> ${readableDate}</p>
+            <p><strong>Reason:</strong> ${transaction.reason || "N/A"}</p>
+            <p><strong style="color: green">Previous Balance:</strong> ₹${transaction.previousBalance || "0.00"}</p>
+        </div>
+        `;
                         });
+
                         document.getElementById('transactionHistory').innerHTML = historyHTML;
 
                         // Apply styles based on transaction type
                         const transactionTypes = document.querySelectorAll('.transactionType');
-                        transactionTypes.forEach(element => {
+                        const transactionTypes2 = document.querySelectorAll('.transactionType2');
+
+                        transactionTypes.forEach((element, index) => {
                             if (element.textContent === "Addition") {
                                 element.style.color = "green";
-                                a = 'Added'
+                                if (transactionTypes2[index]) {
+                                    transactionTypes2[index].textContent = 'Added Balance';
+                                }
                             } else if (element.textContent === "Deduction") {
                                 element.style.color = "red";
-                                a = 'deducted';
+                                if (transactionTypes2[index]) {
+                                    transactionTypes2[index].textContent = 'Deducted Balance';
+                                }
                             }
                         });
                     } else {
                         document.getElementById('transactionHistory').innerHTML = '<p>No transactions found.</p>';
                     }
+
                 } else {
                     document.getElementById('walletInfo').innerHTML = '<p>No wallet information found.</p>';
                 }
